@@ -3,7 +3,7 @@ const generateBtn = document.querySelector("#generate");
 const submitBtn = document.querySelector("#submitBtn");
 const exitBtn = document.querySelector("#exitBtn");
 
-//polyfill CDN for firefox & safari(?) support
+//polyfill CDN for firefox support
 dialogPolyfill.registerDialog(document.querySelector('#popup'));
 
 // show popup modal
@@ -71,23 +71,3 @@ function generatePassword() {
 generateBtn.addEventListener("click", showPopUp);
 submitBtn.addEventListener("click", writePassword);
 exitBtn.addEventListener("click", exitPopup);
-
-function something() {
-
-  'use strict';
-  var dialog = document.querySelector('#modal-example');
-  var closeButton = dialog.querySelector('button');
-  var showButton = document.querySelector('#show-modal-example');
-
-  if (! dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
-  }
-  var closeClickHandler = function(event) {
-      dialog.close();
-  };
-  var showClickHandler = function(event) {
-      dialog.showModal();
-  };
-  showButton.addEventListener('click', showClickHandler);
-  closeButton.addEventListener('click', closeClickHandler);
-};
